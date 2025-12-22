@@ -1,5 +1,9 @@
-"scripts": {
+{
+  "name": "solana-borsh-decoder",
+  "description": "Type-safe Borsh decoder for Solana program instructions (focused on lending protocols like Jupiter Lend)",
+  "scripts": {
   "build": "tsc",
   "watch": "tsc --watch",
   "clean": "rm -rf dist"
+}
 }
