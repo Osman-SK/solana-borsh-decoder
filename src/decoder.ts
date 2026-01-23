@@ -4,7 +4,7 @@ import { DecodedOperate, TransferType } from './types';
 
 const OperateSchema = borsh.struct([
   // Replace i128 with raw bytes, parse manually
-  borsh.array(borsh.u8(), 16, 'supplyAmountBytes'),
+  borsh.array(borsh.u8(), 16, 'supplyAmountBytes'), //borsh.array(innerType, length, fieldName)
   borsh.array(borsh.u8(), 16, 'borrowAmountBytes'),
   borsh.publicKey('withdrawTo'),
   borsh.publicKey('borrowTo'),
@@ -12,7 +12,7 @@ const OperateSchema = borsh.struct([
 ]);
 
 export function decodeOperate(data: Buffer): DecodedOperate {
-  const raw = OperateSchema.decode(data.subarray(8));
+  const raw = OperateSchema.decode(data.subarray(8)); //decode(b, offset)
 
   return {
     supplyAmount: parseI128(Uint8Array.from(raw.supplyAmountBytes)),
@@ -39,4 +39,3 @@ function parseI128(leBytes: Uint8Array): bigint {
 
   return value;
 }
-

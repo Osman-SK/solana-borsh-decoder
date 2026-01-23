@@ -1,6 +1,6 @@
 import { Command } from 'commander';
 import * as fs from 'fs';
-import bs58 from 'bs58';  // npm install bs58 if missing
+import bs58 from 'bs58';
 import { decodeOperate } from './decoder';
 import { toPrettyJson } from './json-utils';
 
@@ -8,7 +8,7 @@ const program = new Command();
 
 program
   .name('jlend-operate-decoder')
-  .description('Decode JLend Liquidity Operate ix – TVL metrics ready')
+  .description('Decode JLend Liquidity Operate ix')
   .version('0.1.0')
   .argument('<input>', 'instruction data (base58/base64/hex string) or file path')
   .option('-f, --format <type>', 'force format: base58, base64, or hex', 'auto')  // Auto-detect

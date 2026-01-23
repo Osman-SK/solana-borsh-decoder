@@ -14,4 +14,9 @@ Output pretty JSON (with safe bigint/PublicKey handling)
 ```bash
 npm install
 npm run build
-node dist/cli.js "<base64-instruction>" --format base64
+npm run start -- "<operate-ix-data>"
+```
+
+eg. 
+
+npm run build && npm run start -- "0xd96ad06374972a870000000000000000000000000000000000028393fbffffffffffffffffffffff65f5dffd7c84af75a8a5f7bdcea1622e2b3abf87fc53a871b908561a3a8b1bde65f5dffd7c84af75a8a5f7bdcea1622e2b3abf87fc53a871b908561a3a8b1bde01"
